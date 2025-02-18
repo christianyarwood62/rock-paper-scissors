@@ -8,18 +8,48 @@
 <body>
     
     <script>
-        
+
+        let humanScore = 0
+        let computerScore = 0
+
         function getComputerChoice() {
             let choice = Math.random()
             if (choice < 0.33) {
-                console.log(choice)
-                return 'Rock!'
+                console.log('computer choice is rock')
+                return 'rock'
             } else if (choice > 0.67) {
-                console.log(choice)
-                return 'Paper!'
+                console.log('computer choice is paper')
+                return 'paper'
             } else {
-                console.log(choice)
-                return 'Scissors!'
+                console.log('computer choice is scissors')
+                return 'scissors'
+            }
+        }
+
+        function getHumanChoice() {
+            return (Choice = prompt('What is your choice?', ))
+        }
+
+        function playRound(humanChoice, computerChoice) {
+            humanChoice = humanChoice.toLowerCase()
+            if ((humanChoice == 'rock') && (computerChoice == 'scissors')) {
+                console.log('You win! Rock beats scissors!')
+            } else if ((humanChoice == 'scissors') && (computerChoice == 'paper')) {
+                console.log('You win! Scissors beats paper!')
+            } else if ((humanChoice == 'paper') && (computerChoice == 'rock')) {
+                console.log('You win! Paper beats rock!')
+            } else if ((humanChoice == 'rock') && (computerChoice == 'paper')) {
+                console.log('You lose! Paper beats rock!')
+            } else if ((humanChoice == 'paper') && (computerChoice == 'scissors')) {
+                console.log('You lose! Scissors beats paper!')
+            } else if ((humanChoice == 'scissors') && (computerChoice == 'rock')) {
+                console.log('You lose! Rock beats scissors!')
+            } else if ((humanChoice === 'rock') && (computerChoice === 'rock')) {
+                console.log('Its a draw!')
+            } else if ((humanChoice === 'paper') && (computerChoice === 'scissors')) {
+                console.log('Its a draw!')
+            } else {
+                console.log('Its a draw!')
             }
         }
 
