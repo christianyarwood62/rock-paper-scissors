@@ -106,11 +106,7 @@ function showHumanImage(event) {
 // }
 // }
 
-
-rockButton.addEventListener('click', () => {
-    const computerChoice = getComputerChoice();
-    playRound('rock', computerChoice);
-    showHumanImage(event);
+function showComputerImage(computerChoice) {
     if (computerChoice === 'rock') {
         computerImage.src = './images/rock.png';
     } else if (computerChoice === 'paper') {
@@ -118,6 +114,13 @@ rockButton.addEventListener('click', () => {
     } else if (computerChoice === 'scissors') {
         computerImage.src = './images/scissors.png';
     }
+}
+
+rockButton.addEventListener('click', () => {
+    const computerChoice = getComputerChoice();
+    playRound('rock', computerChoice);
+    showHumanImage(event);
+    showComputerImage(computerChoice);
     resultsLog.textContent = 'Human Score is: ' + humanScore + '. Computer Score is: ' + computerScore;
     if (humanScore === 5) {
         humanResults.textContent = 'Human wins!';
@@ -126,9 +129,10 @@ rockButton.addEventListener('click', () => {
     }
 })
 scissorsButton.addEventListener('click', () => {
-    playRound('scissors', getComputerChoice());
+    const computerChoice = getComputerChoice();
+    playRound('scissors', computerChoice);
     showHumanImage(event);
-    showComputerImage();
+    showComputerImage(computerChoice);
     resultsLog.textContent = 'Human Score is: ' + humanScore + '. Computer Score is: ' + computerScore;
     if (humanScore === 5) {
         humanResults.textContent = 'Human wins!';
@@ -137,9 +141,10 @@ scissorsButton.addEventListener('click', () => {
     }
 })
 paperButton.addEventListener('click', () => {
-    playRound('paper', getComputerChoice());
+    const computerChoice = getComputerChoice();
+    playRound('paper', computerChoice);
     showHumanImage(event);
-    showComputerImage();
+    showComputerImage(computerChoice);
     resultsLog.textContent = 'Human Score is: ' + humanScore + '. Computer Score is: ' + computerScore;
     if (humanScore === 5) {
         humanResults.textContent = 'Human wins!';
