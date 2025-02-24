@@ -10,7 +10,11 @@
     <button class = paper>Paper</button>
     <button class = scissors>Scissors</button>
 
-    <div class="results"></div>
+    <div class = "results">
+        <p class = 'human-results'></p>
+        <p class = 'computer-results'></p>
+        <p class = 'results-log'></p>
+    </div>
     <script>
 
         function getComputerChoice() {
@@ -91,14 +95,18 @@
         const rockButton = document.querySelector('.rock');
         const scissorsButton = document.querySelector('.scissors');
         const paperButton = document.querySelector('.paper');
-        const resultsLog = document.querySelector('.results');
+        const humanResults = document.querySelector('.human-results');
+        const computerResults = document.querySelector('.computer-results');
+        const resultsLog = document.querySelector('.results-log');
         
         rockButton.addEventListener('click', () => {
             playRound('rock', getComputerChoice());
             if (humanScore === 5) {
-                   resultsLog.textContent = 'Human wins!';
+                   humanResults.textContent = 'Human wins!';
+                   resultsLog.textContent = 'Human Score is: ' + humanScore + '. Computer Score is: ' + computerScore;
             } else if (computerScore === 5) {
-                resultsLog.textContent = 'Computer wins!';
+                computerResults.textContent = 'Computer wins!';
+                resultsLog.textContent = 'Human Score is: ' + humanScore + '. Computer Score is: ' + computerScore;
             } else {
             resultsLog.textContent = 'Human Score is: ' + humanScore + '. Computer Score is: ' + computerScore;
             }
@@ -106,9 +114,11 @@
         scissorsButton.addEventListener('click', () => {
             playRound('scissors', getComputerChoice());
             if (humanScore === 5) {
-                   resultsLog.textContent = 'Human wins!';
+                   humanResults.textContent = 'Human wins!';
+                   resultsLog.textContent = 'Human Score is: ' + humanScore + '. Computer Score is: ' + computerScore;
             } else if (computerScore === 5) {
-                resultsLog.textContent = 'Computer wins!';
+                computerResults.textContent = 'Computer wins!';
+                resultsLog.textContent = 'Human Score is: ' + humanScore + '. Computer Score is: ' + computerScore;
             } else {
             resultsLog.textContent = 'Human Score is: ' + humanScore + '. Computer Score is: ' + computerScore;
             }
@@ -116,13 +126,15 @@
         paperButton.addEventListener('click', () => {
             playRound('paper', getComputerChoice());
             if (humanScore === 5) {
-                resultsLog.textContent = "Human wins!"
+                   humanResults.textContent = 'Human wins!';
+                   resultsLog.textContent = 'Human Score is: ' + humanScore + '. Computer Score is: ' + computerScore;
             } else if (computerScore === 5) {
-                resultsLog.textContent = "Computer wins!"
+                computerResults.textContent = 'Computer wins!';
+                resultsLog.textContent = 'Human Score is: ' + humanScore + '. Computer Score is: ' + computerScore;
             } else {
             resultsLog.textContent = 'Human Score is: ' + humanScore + '. Computer Score is: ' + computerScore;
             }
-            })
+        })
 
     </script>
 
