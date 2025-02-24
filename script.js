@@ -84,8 +84,9 @@ const rockImage = document.createElement('img');
 const scissorsImage = document.createElement('img');
 const imageChoice = document.querySelector('.image-choice');
 animalImage = document.querySelector("#human-rps");
+computerImage = document.querySelector('#computer-rps');
 
-function showImage(event) {
+function showHumanImage(event) {
     if (event.target == rockButton) {
         animalImage.src = "./images/rock.png"
     } if (event.target == paperButton) {
@@ -95,9 +96,28 @@ function showImage(event) {
     }
   }
 
+// function showComputerImage(event) {
+// if (getComputerChoice() === 'rock') {
+//     computerImage.src = './images/rock.png';
+// } else if (getComputerChoice() === 'paper') {
+//     computerImage.src = './images/paper.png';
+// } else if (getComputerChoice() === 'scissors') {
+//     computerImage.src = './images/scissors.png';
+// }
+// }
+
+
 rockButton.addEventListener('click', () => {
-    playRound('rock', getComputerChoice());
-    showImage(event);
+    const computerChoice = getComputerChoice();
+    playRound('rock', computerChoice);
+    showHumanImage(event);
+    if (computerChoice === 'rock') {
+        computerImage.src = './images/rock.png';
+    } else if (computerChoice === 'paper') {
+        computerImage.src = './images/paper.png';
+    } else if (computerChoice === 'scissors') {
+        computerImage.src = './images/scissors.png';
+    }
     resultsLog.textContent = 'Human Score is: ' + humanScore + '. Computer Score is: ' + computerScore;
     if (humanScore === 5) {
         humanResults.textContent = 'Human wins!';
@@ -107,7 +127,8 @@ rockButton.addEventListener('click', () => {
 })
 scissorsButton.addEventListener('click', () => {
     playRound('scissors', getComputerChoice());
-    showImage(event);
+    showHumanImage(event);
+    showComputerImage();
     resultsLog.textContent = 'Human Score is: ' + humanScore + '. Computer Score is: ' + computerScore;
     if (humanScore === 5) {
         humanResults.textContent = 'Human wins!';
@@ -117,7 +138,8 @@ scissorsButton.addEventListener('click', () => {
 })
 paperButton.addEventListener('click', () => {
     playRound('paper', getComputerChoice());
-    showImage(event);
+    showHumanImage(event);
+    showComputerImage();
     resultsLog.textContent = 'Human Score is: ' + humanScore + '. Computer Score is: ' + computerScore;
     if (humanScore === 5) {
         humanResults.textContent = 'Human wins!';
