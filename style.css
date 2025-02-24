@@ -1,3 +1,23 @@
+body {
+    background-color: lightblue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+}
+
+html, body {
+    height: 100%;
+}
+
 .rock {
-   background-color: 'blue';
+   align-content: center;
+}
+
+#header, #choice-statement {
+    text-align: center;
+}
+.buttons {
+    display: flex;
+    justify-content: center;
 }
