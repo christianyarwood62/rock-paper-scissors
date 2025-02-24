@@ -79,40 +79,34 @@ const paperButton = document.querySelector('.paper');
 const humanResults = document.querySelector('.human-results');
 const computerResults = document.querySelector('.computer-results');
 const resultsLog = document.querySelector('.results-log');
+const paperImage = document.createElement('img');
+const rockImage = document.createElement('img');
+const scissorsImage = document.createElement('img');
 
 rockButton.addEventListener('click', () => {
     playRound('rock', getComputerChoice());
+    resultsLog.textContent = 'Human Score is: ' + humanScore + '. Computer Score is: ' + computerScore;
     if (humanScore === 5) {
-           humanResults.textContent = 'Human wins!';
-           resultsLog.textContent = 'Human Score is: ' + humanScore + '. Computer Score is: ' + computerScore;
+        humanResults.textContent = 'Human wins!';
     } else if (computerScore === 5) {
         computerResults.textContent = 'Computer wins!';
-        resultsLog.textContent = 'Human Score is: ' + humanScore + '. Computer Score is: ' + computerScore;
-    } else {
-    resultsLog.textContent = 'Human Score is: ' + humanScore + '. Computer Score is: ' + computerScore;
     }
 })
 scissorsButton.addEventListener('click', () => {
     playRound('scissors', getComputerChoice());
+    resultsLog.textContent = 'Human Score is: ' + humanScore + '. Computer Score is: ' + computerScore;
     if (humanScore === 5) {
-           humanResults.textContent = 'Human wins!';
-           resultsLog.textContent = 'Human Score is: ' + humanScore + '. Computer Score is: ' + computerScore;
+        humanResults.textContent = 'Human wins!';
     } else if (computerScore === 5) {
         computerResults.textContent = 'Computer wins!';
-        resultsLog.textContent = 'Human Score is: ' + humanScore + '. Computer Score is: ' + computerScore;
-    } else {
-    resultsLog.textContent = 'Human Score is: ' + humanScore + '. Computer Score is: ' + computerScore;
     }
 })
 paperButton.addEventListener('click', () => {
     playRound('paper', getComputerChoice());
+    resultsLog.textContent = 'Human Score is: ' + humanScore + '. Computer Score is: ' + computerScore;
     if (humanScore === 5) {
-           humanResults.textContent = 'Human wins!';
-           resultsLog.textContent = 'Human Score is: ' + humanScore + '. Computer Score is: ' + computerScore;
+        humanResults.textContent = 'Human wins!';
     } else if (computerScore === 5) {
         computerResults.textContent = 'Computer wins!';
-        resultsLog.textContent = 'Human Score is: ' + humanScore + '. Computer Score is: ' + computerScore;
-    } else {
-    resultsLog.textContent = 'Human Score is: ' + humanScore + '. Computer Score is: ' + computerScore;
     }
 })
