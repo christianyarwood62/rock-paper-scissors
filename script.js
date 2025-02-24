@@ -140,6 +140,7 @@ scissorsButton.addEventListener('click', () => {
         computerResults.textContent = 'Computer wins!';
     }
 })
+
 paperButton.addEventListener('click', () => {
     const computerChoice = getComputerChoice();
     playRound('paper', computerChoice);

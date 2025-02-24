@@ -14,7 +14,7 @@ html, body {
    align-content: center;
 }
 
-#rps {
+#human-rps, #computer-rps {
     width: 300px;
     height: auto;
 }
@@ -29,4 +29,11 @@ html, body {
 
 .results-log, .results {
     text-align: center;
+}
+
+#image-container {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    padding: 20px 0px;
 }
