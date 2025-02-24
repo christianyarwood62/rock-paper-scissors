@@ -82,9 +82,22 @@ const resultsLog = document.querySelector('.results-log');
 const paperImage = document.createElement('img');
 const rockImage = document.createElement('img');
 const scissorsImage = document.createElement('img');
+const imageChoice = document.querySelector('.image-choice');
+animalImage = document.querySelector("#human-rps");
+
+function showImage(event) {
+    if (event.target == rockButton) {
+        animalImage.src = "./images/rock.png"
+    } if (event.target == paperButton) {
+        animalImage.src = "./images/paper.png"
+    } if (event.target == scissorsButton) {
+        animalImage.src = "./images/scissors.png"
+    }
+  }
 
 rockButton.addEventListener('click', () => {
     playRound('rock', getComputerChoice());
+    showImage(event);
     resultsLog.textContent = 'Human Score is: ' + humanScore + '. Computer Score is: ' + computerScore;
     if (humanScore === 5) {
         humanResults.textContent = 'Human wins!';
@@ -94,6 +107,7 @@ rockButton.addEventListener('click', () => {
 })
 scissorsButton.addEventListener('click', () => {
     playRound('scissors', getComputerChoice());
+    showImage(event);
     resultsLog.textContent = 'Human Score is: ' + humanScore + '. Computer Score is: ' + computerScore;
     if (humanScore === 5) {
         humanResults.textContent = 'Human wins!';
@@ -103,6 +117,7 @@ scissorsButton.addEventListener('click', () => {
 })
 paperButton.addEventListener('click', () => {
     playRound('paper', getComputerChoice());
+    showImage(event);
     resultsLog.textContent = 'Human Score is: ' + humanScore + '. Computer Score is: ' + computerScore;
     if (humanScore === 5) {
         humanResults.textContent = 'Human wins!';
