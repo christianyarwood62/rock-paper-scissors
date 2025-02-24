@@ -6,11 +6,11 @@
     <title>Document</title>
 </head>
 <body>
-    <button>Rock</button>
-    <button>Paper</button>
-    <button>Scissors</button>
+    <button class = rock>Rock</button>
+    <button class = paper>Paper</button>
+    <button class = scissors>Scissors</button>
 
-    <div class="results">Results: <br></div>
+    <div class="results"></div>
     <script>
 
         function getComputerChoice() {
@@ -30,6 +30,8 @@
         }
 
         function playRound(humanChoice, computerChoice) {
+            humanScore = 0
+            computerScore = 0
             humanChoice = humanChoice.toLowerCase();
             if ((humanChoice == 'rock') && (computerChoice == 'scissors')) {
                 console.log('Your choice is rock');
@@ -99,17 +101,26 @@
         //     }
         // }
 
-
+        const rockButton = document.querySelector('.rock');
+        const scissorsButton = document.querySelector('.scissors');
+        const paperButton = document.querySelector('.paper');
+        const resultsLog = document.querySelector('.results');
+        
         rockButton.addEventListener('click', () => {
-            playRound('rock', getComputerChoice)
+            playRound('rock', getComputerChoice());
+            resultsLog.textContent = 'rock';
         })
         scissorsButton.addEventListener('click', () => {
-            playRound('scissors', getComputerChoice)
+            playRound('scissors', getComputerChoice());
+            resultsLog.textContent = 'scissors';
         })
         paperButton.addEventListener('click', () => {
-            playRound('paper', getComputerChoice)
+            playRound('paper', getComputerChoice());
+            resultsLog.textContent = 'paper';
         })
 
+        
+        
 
     </script>
 
