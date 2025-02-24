@@ -17,7 +17,12 @@ html, body {
 #header, #choice-statement {
     text-align: center;
 }
+
 .buttons {
     display: flex;
     justify-content: center;
+}
+
+.results-log, .results {
+    text-align: center;
 }
