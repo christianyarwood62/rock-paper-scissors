@@ -6,7 +6,10 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <button>Rock</button>
+    <button>Paper</button>
+    <button>Scissors</button>
+
     <div class="results">Results: <br></div>
     <script>
 
@@ -96,9 +99,6 @@
         //     }
         // }
 
-        const rockButton = document.createElement('button');
-        const scissorsButton = document.createElement('button');
-        const paperButton = document.createElement('button');
 
         rockButton.addEventListener('click', () => {
             playRound('rock', getComputerChoice)
@@ -109,6 +109,7 @@
         paperButton.addEventListener('click', () => {
             playRound('paper', getComputerChoice)
         })
+
 
     </script>
 
