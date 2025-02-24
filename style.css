@@ -14,6 +14,10 @@ html, body {
    align-content: center;
 }
 
+#rps {
+    width: 300px;
+    height: auto;
+}
 #header, #choice-statement {
     text-align: center;
 }
