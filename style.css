@@ -45,3 +45,12 @@ html, body {
     flex-direction: column;
     justify-content: space-between;
 }
+
+#restart-button-container {
+    display: flex;
+    justify-content: center;
+}
+
+.start-new-game-button {
+    width: auto;
+}
