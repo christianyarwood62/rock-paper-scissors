@@ -73,6 +73,7 @@ function playRound(humanChoice, computerChoice) {
     }
 }
 
+const buttons = document.querySelector('.buttons');
 const rockButton = document.querySelector('.rock');
 const scissorsButton = document.querySelector('.scissors');
 const paperButton = document.querySelector('.paper');
@@ -122,12 +123,15 @@ rockButton.addEventListener('click', () => {
     resultsLog.textContent = 'Human Score is: ' + humanScore + '. Computer Score is: ' + computerScore;
     if (humanScore === 5) {
         humanResults.textContent = 'Human wins!';
+        buttons.remove();
         restartButtonContainer.appendChild(restartGameButton);
     } else if (computerScore === 5) {
         computerResults.textContent = 'Computer wins!';
+        buttons.remove();
         restartButtonContainer.appendChild(restartGameButton);
     }
 })
+
 scissorsButton.addEventListener('click', () => {
     const computerChoice = getComputerChoice();
     playRound('scissors', computerChoice);
@@ -138,8 +142,12 @@ scissorsButton.addEventListener('click', () => {
     resultsLog.textContent = 'Human Score is: ' + humanScore + '. Computer Score is: ' + computerScore;
     if (humanScore === 5) {
         humanResults.textContent = 'Human wins the game!';
+        buttons.remove();
+        restartButtonContainer.appendChild(restartGameButton);
     } else if (computerScore === 5) {
         computerResults.textContent = 'Computer wins the game!';
+        buttons.remove();
+        restartButtonContainer.appendChild(restartGameButton);
     }
 })
 
@@ -153,8 +161,12 @@ paperButton.addEventListener('click', () => {
     resultsLog.textContent = 'Human Score is: ' + humanScore + '. Computer Score is: ' + computerScore;
     if (humanScore === 5) {
         humanResults.textContent = 'Human wins the game!';
+        buttons.remove();
+        restartButtonContainer.appendChild(restartGameButton);
     } else if (computerScore === 5) {
         computerResults.textContent = 'Computer wins the game!';
+        buttons.remove();
+        restartButtonContainer.appendChild(restartGameButton);
     }
 })
 
