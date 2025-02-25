@@ -39,3 +39,9 @@ html, body {
     align-items: center;
     gap: 100px;
 }
+
+#human-choice, #computer-choice {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
