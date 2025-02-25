@@ -87,10 +87,10 @@ const animalImage = document.querySelector("#human-rps");
 const computerImage = document.querySelector('#computer-rps');
 const humanText = document.querySelector('#human-text');
 const computerText = document.querySelector('#computer-text');
-const startNewGame = document.createElement('button');
+const restartGameButton = document.createElement('button');
 const restartButtonContainer = document.querySelector('#restart-button-container');
-startNewGame.classList.add('start-new-game-button');
-startNewGame.textContent = 'Restart Game';
+restartGameButton.classList.add('start-new-game-button');
+restartGameButton.textContent = 'Restart Game';
 
 function showHumanImage(event) {
     if (event.target == rockButton) {
@@ -122,10 +122,10 @@ rockButton.addEventListener('click', () => {
     resultsLog.textContent = 'Human Score is: ' + humanScore + '. Computer Score is: ' + computerScore;
     if (humanScore === 5) {
         humanResults.textContent = 'Human wins!';
-        restartButtonContainer.appendChild(startNewGame);
+        restartButtonContainer.appendChild(restartGameButton);
     } else if (computerScore === 5) {
         computerResults.textContent = 'Computer wins!';
-        restartButtonContainer.appendChild(startNewGame);
+        restartButtonContainer.appendChild(restartGameButton);
     }
 })
 scissorsButton.addEventListener('click', () => {
@@ -156,4 +156,8 @@ paperButton.addEventListener('click', () => {
     } else if (computerScore === 5) {
         computerResults.textContent = 'Computer wins the game!';
     }
+})
+
+restartGameButton.addEventListener('click', () => {
+    window.location.reload();
 })
